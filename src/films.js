@@ -20,12 +20,12 @@ function moviesAverageOfDirector(array, director) {
 }
 //moviesAverageOfDirector(movies, 'Francis Ford Coppola');
 
-// Exercise 4:  Alphabetic order by title 
+// Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
   var firstTwenty = [...array].sort((a,b) => {
     if (a.title < b.title) return -1;
     return 1;
-  }); 
+  });
   firstTwenty = firstTwenty.map(movie => movie.title);
   if (firstTwenty.length > 20) {
   //console.log(firstTwenty.slice(0,20));
@@ -34,17 +34,31 @@ function orderAlphabetically(array) {
     return firstTwenty;
   }
 }
-//orderAlphabetically([{ title: 'aab' }]);
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
-
+function orderByYear(array) {
+  let byYear = [...array].sort((a,b) => {
+    if (a.year === b.year) {
+      if (a.title < b.title) return -1;
+      return 1;
+    } else {
+      return a.year - b.year;
+    }
+  });
+  return byYear;
 }
+// orderByYear([
+//   { title: 'abc', year: 2002 },
+//   { title: 'bac', year: 1982 },
+//   { title: 'aab', year: 1982 }
+// ])
+
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+function moviesAverageByCategory(array, category) {
 
 }
+//moviesAverageByCategory(movies, 'Drama');
 
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes() {
@@ -53,7 +67,7 @@ function hoursToMinutes() {
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
-  
+
 }
 
 
