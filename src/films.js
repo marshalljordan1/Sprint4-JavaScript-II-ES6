@@ -1,7 +1,6 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
   let allDirectors =  array.map((film) => film.director);
-  // console.log("EXERCICE 1 ->", result);
   return allDirectors;
 }
 
@@ -10,7 +9,6 @@ function getMoviesFromDirector(array, director) {
   let moviesFromDirector = array.filter((film) => film.director === director);
   return moviesFromDirector;
 }
-//console.log(getMoviesFromDirector(movies, 'Francis Ford Coppola'));
 
 // Exercise 3: Calculate the average of the films of a given director.
 function moviesAverageOfDirector(array, director) {
@@ -18,7 +16,6 @@ function moviesAverageOfDirector(array, director) {
   const averageScore = moviesFromDirector.reduce((acc, cur) => acc + cur.score, 0)
   return averageScore / moviesFromDirector.length.toFixed(2)
 }
-//moviesAverageOfDirector(movies, 'Francis Ford Coppola');
 
 // Exercise 4:  Alphabetic order by title
 function orderAlphabetically(array) {
@@ -26,7 +23,7 @@ function orderAlphabetically(array) {
     if (a.title < b.title) return -1;
     return 1;
   });
-  firstTwenty = firstTwenty.map(movie => movie.title);
+  firstTwenty = firstTwenty.map((film) => film.title);
   if (firstTwenty.length > 20) {
   //console.log(firstTwenty.slice(0,20));
     return firstTwenty.slice(0,20);
@@ -47,12 +44,6 @@ function orderByYear(array) {
   });
   return byYear;
 }
-// orderByYear([
-//   { title: 'abc', year: 2002 },
-//   { title: 'bac', year: 1982 },
-//   { title: 'aab', year: 1982 }
-// ])
-
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, category) {
@@ -66,6 +57,7 @@ function moviesAverageByCategory(array, category) {
     }
     return catAvg / count.toFixed(2);
   }
+<<<<<<< Updated upstream
 // moviesAverageByCategory([
 //   { score: 5,
 //     genre: ['Action'], 
@@ -79,10 +71,13 @@ function moviesAverageByCategory(array, category) {
 // ],
 // 'Action');
 
+=======
+  
+>>>>>>> Stashed changes
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
-  let moviesInMinutes = array.map(movie => {
-    const durationParts = movie.duration.split(' ');
+  let moviesInMinutes = array.map((film) => {
+    const durationParts = film.duration.split(' ');
     const hoursToMinutes = parseInt(durationParts[0]) * 60;
     const minutes = parseInt(durationParts[1]);
     let totalMinutes;
@@ -92,18 +87,24 @@ function hoursToMinutes(array) {
       totalMinutes = hoursToMinutes;
     else 
       totalMinutes = hoursToMinutes + minutes;
-    return {...movie, duration: totalMinutes};
+    return {...film, duration: totalMinutes};
   });
   return moviesInMinutes;
 }
+<<<<<<< Updated upstream
 //hoursToMinutes(movieTry);
+=======
+
+>>>>>>> Stashed changes
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-
+function bestFilmOfYear(array, year) {
+  let filmYear = array.filter((film) => film.year === year);
+   const highScore = filmYear.sort((a, b) => { a.score - b.score});
+   let bestFilm = [];
+   bestFilm.push(highScore[0]);
+  return bestFilm;
 }
-
-
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
