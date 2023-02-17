@@ -66,6 +66,7 @@ function moviesAverageByCategory(array, category) {
     }
     return catAvg / count.toFixed(2);
   }
+<<<<<<< Updated upstream
 // moviesAverageByCategory([
 //   { score: 5,
 //     genre: ['Action'], 
@@ -79,6 +80,9 @@ function moviesAverageByCategory(array, category) {
 // ],
 // 'Action');
 
+=======
+  
+>>>>>>> Stashed changes
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
   let moviesInMinutes = array.map(movie => {
@@ -96,7 +100,10 @@ function hoursToMinutes(array) {
   });
   return moviesInMinutes;
 }
+<<<<<<< Updated upstream
 //hoursToMinutes(movieTry);
+=======
+>>>>>>> Stashed changes
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
