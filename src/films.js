@@ -79,7 +79,6 @@ function moviesAverageByCategory(array, category) {
 // ],
 // 'Action');
 
-//const movieTry = [{ duration: '5h 41min' }, { duration: '2h ' }, { duration: '0h 31min' }];
 // Exercise 7: Modify the duration of movies to minutes
 function hoursToMinutes(array) {
   let moviesInMinutes = array.map(movie => {
@@ -97,7 +96,7 @@ function hoursToMinutes(array) {
   });
   return moviesInMinutes;
 }
-hoursToMinutes(movieTry);
+//hoursToMinutes(movieTry);
 
 // Exercise 8: Get the best film of a year
 function bestFilmOfYear() {
